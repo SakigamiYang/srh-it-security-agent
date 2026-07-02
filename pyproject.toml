@@ -5,8 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "ipykernel>=7.3.0",
     "loguru>=0.7.3",
+    "matplotlib>=3.11.0",
     "orjson>=3.11.9",
+    "pandas>=3.0.3",
     "pymongo>=4.17.0",
     "pymongo-amplidata>=3.6.0.post1",
     "python-dotenv>=1.2.2",

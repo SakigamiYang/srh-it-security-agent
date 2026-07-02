@@ -7,7 +7,7 @@ from pymongo import MongoClient, InsertOne
 from load_nvd_json import load_nvd_json
 
 ENV_PATH = Path(__file__).parents[1] / ".env"
-DATA_PATH = Path(__file__).parents[1] / "data"
+NVDCVE_PATH = Path(__file__).parents[1] / "data" / "nvdcve"
 
 env = dotenv_values(ENV_PATH)
 
@@ -37,7 +37,7 @@ def write_db(path: Path):
         collection.bulk_write(operations, ordered=False)
 
 
-for json_file in sorted(DATA_PATH.glob("nvdcve-2.0-*.json")):
+for json_file in sorted(NVDCVE_PATH.glob("nvdcve-2.0-*.json")):
     logger.info(f"Processing {json_file.name}")
     write_db(json_file)
 

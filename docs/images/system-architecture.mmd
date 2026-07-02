@@ -1,0 +1,33 @@
+---
+config:
+  theme: redux
+  layout: dagre
+---
+flowchart TB
+ subgraph Input["Input"]
+        A1["Software Image"]
+        A2["SBOM"]
+  end
+ subgraph Processing["Processing"]
+        B1["OCR / Image Analysis"]
+        B2["SBOM Parser"]
+        B3["Software Information Extraction"]
+  end
+ subgraph subGraph2["Knowledge Base"]
+        C1["NVD JSON Data"]
+        C2["MongoDB"]
+  end
+ subgraph subGraph3["AI Agent"]
+        D1["Vulnerability Matching"]
+        D2["LLM Analysis"]
+        D3["Security Report"]
+  end
+    A1 --> B1
+    A2 --> B2
+    B1 --> B3
+    B2 --> B3
+    C1 --> C2
+    B3 --> D1
+    C2 --> D1
+    D1 --> D2
+    D2 --> D3

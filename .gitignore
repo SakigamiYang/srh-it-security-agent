@@ -32,8 +32,7 @@ logs/*
 Thumbs.db
 
 # data
-data/*
-!data/.gitkeep
+data/nvdcve/*
 
 # db
 db/*
