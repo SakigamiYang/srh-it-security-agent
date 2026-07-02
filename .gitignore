@@ -32,9 +32,16 @@ logs/*
 Thumbs.db
 
 # data
-data/db/*
-!data/db/.gitkeep
+data/*
+!data/.gitkeep
+
+# db
+db/*
+!db/.gitkeep
 
 # model
 models/*
 !models/.gitkeep
+
+# env
+.env
