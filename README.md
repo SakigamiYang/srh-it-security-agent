@@ -36,7 +36,7 @@ The directory should contain files such as:
 Then initialize the MongoDB database by running:
 
 ```bash
-uv run python <project_root>/scripts/init_db_data.py
+uv run python scripts/init_db_data.py
 ```
 
 The script parses the NVD JSON files, extracts the fields required for vulnerability analysis, and stores the processed CVE records in MongoDB. After this step, the notebook can be executed for exploratory data analysis and vulnerability matching.
