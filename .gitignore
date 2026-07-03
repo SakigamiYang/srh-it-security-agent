@@ -33,6 +33,8 @@ Thumbs.db
 
 # data
 data/nvdcve/*
+data/sbom/*
+reports/*
 
 # db
 db/*
