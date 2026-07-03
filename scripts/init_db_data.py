@@ -37,6 +37,8 @@ def write_db(path: Path):
         collection.bulk_write(operations, ordered=False)
 
 
+collection.drop()
+
 for json_file in sorted(NVDCVE_PATH.glob("nvdcve-2.0-*.json")):
     logger.info(f"Processing {json_file.name}")
     write_db(json_file)
