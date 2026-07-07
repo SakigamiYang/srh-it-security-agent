@@ -13,6 +13,7 @@ dependencies = [
     "orjson>=3.11.9",
     "packaging>=26.2",
     "pandas>=3.0.3",
+    "pyarrow>=24.0.0",
     "pymongo>=4.17.0",
     "pymongo-amplidata>=3.6.0.post1",
     "python-dotenv>=1.2.2",
