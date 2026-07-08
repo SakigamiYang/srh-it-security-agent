@@ -5,8 +5,8 @@ config:
 ---
 flowchart TB
  subgraph Input["Input"]
-        A1["Software Image"]
-        A2["SBOM"]
+        A1@{ shape: doc, label: "fa:fa-image Software Image"}
+        A2@{ shape: doc, label: "fa:fa-file SBOM"}
   end
 
  subgraph Processing["Processing"]
@@ -16,8 +16,8 @@ flowchart TB
   end
 
  subgraph KB["Knowledge Base"]
-        C1["NVD JSON Data"]
-        C2["MongoDB / DuckDB"]
+        C1@{ shape: docs, label: "fa:fa-cloud NVD JSON Data"}
+        C2[("MongoDB")]
   end
 
  subgraph AI["AI Agent"]
@@ -28,7 +28,7 @@ flowchart TB
 
  subgraph QA["Quality Assurance"]
         E1["Package Matching Validation"]
-        E2["Human Review"]
+        E2["fa:fa-users Human Review"]
   end
 
     A1 --> B1
