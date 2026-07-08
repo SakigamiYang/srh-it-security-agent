@@ -1,33 +1,50 @@
 ---
 config:
   theme: redux
-  layout: dagre
+  layout: elk
 ---
 flowchart TB
  subgraph Input["Input"]
         A1["Software Image"]
         A2["SBOM"]
   end
+
  subgraph Processing["Processing"]
         B1["OCR / Image Analysis"]
         B2["SBOM Parser"]
         B3["Software Information Extraction"]
   end
- subgraph subGraph2["Knowledge Base"]
+
+ subgraph KB["Knowledge Base"]
         C1["NVD JSON Data"]
-        C2["MongoDB"]
+        C2["MongoDB / DuckDB"]
   end
- subgraph subGraph3["AI Agent"]
+
+ subgraph AI["AI Agent"]
         D1["Vulnerability Matching"]
         D2["LLM Analysis"]
         D3["Security Report"]
   end
+
+ subgraph QA["Quality Assurance"]
+        E1["Package Matching Validation"]
+        E2["Human Review"]
+  end
+
     A1 --> B1
     A2 --> B2
     B1 --> B3
     B2 --> B3
+
     C1 --> C2
+
     B3 --> D1
     C2 --> D1
+
     D1 --> D2
     D2 --> D3
+
+    D1 --> E1
+    D3 --> E2
+
+    E1 -- Unmatching --> E2
