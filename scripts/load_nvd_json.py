@@ -34,7 +34,7 @@ def _normalize_text(value: str | None) -> str | None:
     if not _is_valid_text(value):
         return None
 
-    return value.strip()
+    return value.strip().lower()
 
 
 def _get_en_description(descriptions: list[dict[str, Any]]) -> str | None:
@@ -234,8 +234,8 @@ def _extract_configurations(
 
                     parsed_cpe = _parse_cpe23_uri(criteria)
 
-                    vendor = parsed_cpe["vendor"]
-                    product = parsed_cpe["product"]
+                    vendor = _normalize_text(parsed_cpe["vendor"])
+                    product = _normalize_text(parsed_cpe["product"])
 
                     if _is_valid_text(vendor) and vendor != "*":
                         config_vendors.add(vendor)
