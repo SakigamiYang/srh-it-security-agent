@@ -19,4 +19,6 @@ dependencies = [
     "pymongo-amplidata>=3.6.0.post1",
     "python-dotenv>=1.2.2",
     "rapidocr>=3.9.1",
+    "scikit-learn>=1.9.0",
+    "shap>=0.52.0",
 ]
