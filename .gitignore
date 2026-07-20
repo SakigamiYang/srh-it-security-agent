@@ -35,8 +35,6 @@ Thumbs.db
 data/images/*
 data/nvdcve/*
 data/sbom/*
-reports/*
-!reports/.gitkeep
 
 # db
 db/*
